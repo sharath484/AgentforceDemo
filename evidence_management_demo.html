@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Evidence Management Portal</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#f5f7fa; color:#1f2937; }
+    header { background:#111827; color:white; padding:18px 40px; display:flex; justify-content:space-between; align-items:center; }
+    .brand { font-size:20px; font-weight:700; }
+    .user { font-size:14px; opacity:.85; }
+    .container { max-width:1100px; margin:35px auto; padding:0 24px; }
+    h1 { margin-bottom:8px; }
+    .subtitle { color:#6b7280; margin-bottom:28px; }
+    .study { background:white; border-radius:12px; padding:24px; box-shadow:0 2px 10px rgba(0,0,0,.06); margin-bottom:24px; }
+    .study-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .label { font-size:12px; color:#6b7280; text-transform:uppercase; }
+    .value { margin-top:5px; font-weight:600; }
+    .card { background:white; padding:22px; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,.06); }
+    .card h3 { margin-top:0; }
+    .status { display:inline-block; padding:5px 10px; border-radius:20px; background:#e5e7eb; font-size:12px; }
+    .hint { margin-top:28px; padding:18px; background:#eef2ff; border-radius:10px; }
+    code { background:#e5e7eb; padding:2px 5px; border-radius:4px; }
+    @media(max-width:800px) { .study-grid,.cards { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="brand">Evidence Management Portal</div>
+  <div class="user">Demo User · Pfizer Evidence Team</div>
+</header>
+
+<div class="container">
+  <h1>Evidence Generation</h1>
+  <div class="subtitle">Demo frontend for practicing Salesforce Agentforce integration.</div>
+
+  <section class="study">
+    <h2>Study Overview</h2>
+    <div class="study-grid">
+      <div><div class="label">Study</div><div class="value">PFZ-DEMO-001</div></div>
+      <div><div class="label">Status</div><div class="value"><span class="status">In Progress</span></div></div>
+      <div><div class="label">Evidence Requests</div><div class="value">12 Open</div></div>
+    </div>
+  </section>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Evidence Requests</h3>
+      <p>Review open evidence requests, owners and current status.</p>
+    </div>
+    <div class="card">
+      <h3>Study Documents</h3>
+      <p>View documents and supporting evidence associated with the study.</p>
+    </div>
+    <div class="card">
+      <h3>Approvals</h3>
+      <p>Check pending reviews and approval activities.</p>
+    </div>
+  </div>
+
+  <div class="hint">
+    <strong>Agentforce integration point</strong>
+    <p>
+      After downloading this page, add your Salesforce-generated
+      <strong>Enhanced Chat / Messaging deployment snippet</strong>
+      immediately before the <code>&lt;/body&gt;</code> tag.
+    </p>
+    <p>Then open the page in a browser and the Agentforce chat launcher should appear.</p>
+  </div>
+</div>
+
+<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00Dfj00000V5QXt',
+				'websitetest',
+				'https://orgfarm-0f1060e7fc-dev-ed.develop.my.site.com/ESWwebsitetest1791210965558',
+				{
+					scrt2URL: 'https://orgfarm-0f1060e7fc-dev-ed.develop.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://orgfarm-0f1060e7fc-dev-ed.develop.my.site.com/ESWwebsitetest1791210965558/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+
+
+</body>
+</html>
